@@ -1,0 +1,45 @@
+
+Showing logs for build [32mcb-kubecd-bdd-sbrp-import-15878-gwqrt-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-xlzf5[0m
+{"level":"info","ts":1587829969.0268981,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1587829969.027481,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-bdd-sbrp-import-15878-gwqrt-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-pxt4l[0m
+{"level":"info","ts":1587829970.6703985,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1587829970.6796887,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-bdd-sbrp-import-15878-gwqrt-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-bdd-sbrp-import-15878-gwqrt-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-cb-kubecd-bdd-sbrp-import-15878-gwqrt-8qrc4[0m
+{"level":"info","ts":1587829979.7199013,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1587829981.0031047,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/bdd-sbrp-import-1587828267.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-bdd-sbrp-import-15878-gwqrt-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:2a13117e8d55f5c59317bc9c295e4fa2578b26be
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcb-kubecd-bdd-sbrp-import-15878-gwqrt-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mcb-kubecd-bdd-sbrp-import-15878-gwqrt-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-mvn-deploy[0m
+Picked up _JAVA_OPTIONS: -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms10m -Xmx192m
+OpenJDK 64-Bit Server VM warning: If the number of processors is expected to increase from one, then you should configure the number of parallel GC threads appropriately using -XX:ParallelGCThreads=N
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----< com.github.jenkinsx.quickstarts:bdd-sbrp-import-1587828267 >-----
+[INFO] Building spring-boot-rest-prometheus 0.0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  13.641 s
+[INFO] Finished at: 2020-04-25T15:53:19Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal on project bdd-sbrp-import-1587828267: Could not resolve dependencies for project com.github.jenkinsx.quickstarts:bdd-sbrp-import-1587828267:jar:0.0.1: Could not transfer artifact net.bytebuddy:byte-buddy:jar:1.9.7 from/to nexus (http://nexus/repository/maven-group/): GET request of: net/bytebuddy/byte-buddy/1.9.7/byte-buddy-1.9.7.jar from nexus failed: Connection reset -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-mvn-deploy'. The execution of the pipeline has stopped.[0m
